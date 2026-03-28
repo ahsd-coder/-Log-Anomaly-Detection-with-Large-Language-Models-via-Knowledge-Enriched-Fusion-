@@ -1,0 +1,492 @@
+﻿template_id,label,content,explanation
+1,normal,instruction cache parity error corrected,指令缓存奇偶校验错误已通过硬件纠错机制修复，无系统功能影响，符合正常纠错日志特征
+2,normal,MidplaneSwitchController performing bit sparing on R27-M1-L3-U18-C bit 3,中板交换控制器在R27-M1-L3-U18-C位置的3号比特执行位冗余切换，属于硬件冗余机制正常触发，保障系统稳定性
+3,normal,generating core.22755,生成核心转储文件core.22755，为程序调试或异常后分析提供数据支持，属于正常系统诊断输出
+4,normal,"1 ddr errors(s) detected and corrected on rank 0, symbol 31, bit 5",在DDR内存0秩、12符号、5比特位置检测到1个错误，已通过ECC纠错机制修复，单次纠错符合内存正常运行特征
+5,normal,19 L3 EDRAM error(s) (dcr 0x0157) detected and corrected,检测到19个L3 EDRAM错误（DCR寄存器值0x0157），均已通过硬件纠错功能修复，未超出正常纠错频次阈值
+6,normal,"CE sym 12, at 0x1682ed20, mask 0x01",可纠正错误（CE）发生在地址0x1682ed20、符号12位置，掩码0x01，已完成自动纠错，无系统性能影响
+7,normal,total of 1 ddr error(s) detected and corrected,DDR内存累计检测到1个错误并完成纠正，纠错频次处于正常范围，内存功能正常
+8,normal,ddr: activating redundant bit steering: rank=0 symbol=4,DDR内存激活冗余位导向功能，涉及0秩4符号，属于内存冗余机制正常启用，提升错误容错能力
+9,normal,"ddr: excessive soft failures, consider replacing the card",DDR内存出现过多软错误，系统提示建议更换硬件卡，当前仍可运行但需关注硬件状态
+10,normal,"ciod: Error loading /p/gb2/spelce1/raptor.dev.new3d.BGL.CXX_XL.MPI.ex: invalid or missing program image, No such file or directory",ciod进程加载指定MPI程序时失败，原因是程序镜像无效或文件路径不存在，属于文件配置错误，非系统核心异常
+11,normal,3091200 double-hummer alignment exceptions,累计出现3091200次双总线对齐异常，属于程序运行时的轻微兼容性问题，未导致系统中断
+12,normal,1 tree receiver 1 in re-synch state event(s) (dcr 0x0185) detected,检测到1次树状接收器1重新同步事件（DCR寄存器值0x0185），属于通信链路正常同步流程，无故障关联
+13,normal,idoproxydb has been started: Name: DRV141_2005 Input parameters: -enableflush -loguserinfo db.properties BlueGene1,idoproxydb服务已启动，启动参数包含日志刷新启用、用户信息记录等，服务初始化正常
+14,normal,ciodb has been restarted.,ciodb数据库服务已重启，服务状态恢复正常，无关联故障告警
+15,normal,mmcs_db_server has been started: ./mmcs_db_server --useDatabase BGL --dbproperties serverdb.properties --iolog /bgl/BlueLight/logs/BGL --reconnect-blocks all,mmcs数据库服务器已启动，配置使用BGL数据库、指定日志路径并启用全区块重连，服务启动参数正常
+16,normal,ciod: LOGIN chdir(/home/germann2/SPaSM_static) failed: No such file or directory,ciod进程登录时切换工作目录至/home/germann2/SPaSM_static失败，原因是目录不存在，属于用户配置错误
+17,anomaly,ciod: failed to read message prefix on control stream (CioStream socket to 172.16.96.116:52332: ciod进程在与172.16.96.116,52332的控制流套接字通信时，无法读取消息前缀，属于控制流通信异常，可能导致节点控制指令传输失败，符合软件类通信故障特征
+18,anomaly,data TLB error interrupt,数据转换检测缓冲区（TLB）错误中断，触发硬件异常中断机制，表明虚拟地址到物理地址的转换过程出现故障，可能导致内存访问失效，属于硬件类内存管理异常
+19,normal,instruction address: 0x00004ed8,指令地址为0x00004ed8，属于程序执行过程中的正常地址输出，无故障关联信息
+20,normal,machine check enable..............0,机器检查功能禁用（值为0），属于系统正常配置状态，未启用硬件故障检测机制
+20,anomaly,machine check interrupt,机器检查中断触发，表明系统检测到硬件级故障（可能涉及CPU、内存或总线组件），需结合硬件状态寄存器进一步定位，属于严重硬件异常，可能导致系统稳定性下降
+21,normal,machine check status register: 0xa0800000,机器检查状态寄存器值为0xa0800000，记录硬件检测状态，当前无故障标识，属于正常状态输出
+22,normal,summary...........................1,汇总状态值为1，属于系统状态统计正常输出，无异常关联
+23,normal,instruction plb error.............0,指令PLB总线错误计数为0，表明指令总线传输正常，无故障发生
+24,normal,data write plb error..............0,数据写入PLB总线错误计数为0，数据总线写入操作正常
+25,normal,tlb error.........................0,TLB错误计数为0，虚拟地址转换功能正常
+26,normal,i-cache parity error..............0,指令缓存奇偶校验错误计数为0，指令缓存数据完整性正常
+27,normal,d-cache flush parity error........0,数据缓存刷新奇偶校验错误计数为0，数据缓存操作正常
+28,normal,imprecise machine check...........0,非精确机器检查计数为0，硬件故障检测精度正常，无模糊故障报告
+29,normal,machine state register: 0x00002000,机器状态寄存器值为0x00002000，记录当前系统运行状态，无异常标识
+30,normal,wait state enable.................0,等待状态禁用（值为0），属于系统正常运行配置
+31,normal,critical input interrupt enable...0,关键输入中断禁用（值为0），系统未启用关键事件紧急响应机制
+32,normal,external input interrupt enable...0,外部输入中断禁用（值为0），无外部设备中断请求配置
+33,normal,"problem state (0=sup,1=usr).......0",系统处于特权模式（值为0），属于正常运行权限状态
+34,normal,floating point instr. enabled.....1,浮点指令启用（值为1），浮点运算功能正常激活
+34,anomaly,floating point unavailable interrupt,浮点运算不可用中断，表明浮点运算单元（FPU）故障或未正确初始化，导致浮点指令无法执行，属于硬件类运算单元异常，影响依赖浮点计算的程序运行
+35,normal,floating pt ex mode 0 enable......0,浮点异常模式0禁用（值为0），属于正常浮点运算配置
+36,normal,debug wait enable.................0,调试等待功能禁用（值为0），系统未处于调试暂停状态
+37,normal,debug interrupt enable............0,调试中断禁用（值为0），无调试相关中断配置
+38,normal,instruction address space.........0,指令地址空间标识为0，属于正常内存地址空间配置
+39,normal,data address space................0,数据地址空间标识为0，属于正常内存地址空间配置
+40,normal,core configuration register: 0x00002000,核心配置寄存器值为0x00002000，核心功能配置正常，无异常参数
+41,normal,disable store gathering..................0,存储聚合功能启用（值为0），数据存储效率优化功能正常
+42,normal,disable apu instruction broadcast........0,APU指令广播功能启用（值为0），辅助处理单元指令同步正常
+43,normal,disable trace broadcast..................0,跟踪广播功能启用（值为0），系统运行跟踪数据传输正常
+44,normal,guaranteed instruction cache block touch.0,指令缓存块强制访问功能禁用（值为0），属于正常缓存管理配置
+45,normal,force load/store alignment...............0,加载/存储对齐强制功能禁用（值为0），内存访问地址对齐配置正常
+46,normal,icache prefetch threshold................0,指令缓存预取阈值为0，缓存预取策略正常配置
+47,normal,general purpose registers,通用寄存器状态输出，记录当前寄存器数据，无异常标识
+48,normal,0:00000000 1:00085fd0 2:1eeeeeee 3:0000000b,通用寄存器0-3的数值分别为0x00000000、0x00085fd0、0x1eeeeeee、0x0000000b，寄存器数据正常，无异常值
+51,normal,12:28244842 13:1eeeeeee 14:ffffffff 15:0009def3,通用寄存器12-15的数值分别为0x28244842、0x1eeeeeee、0xffffffff、0x0009def3，寄存器数据正常，无异常值
+52,normal,16:00000000 17:00000000 18:001e7ea0 19:ffffffff,通用寄存器16-19的数值分别为0x00000000、0x00000000、0x001e7ea0、0xffffffff，寄存器数据正常，无异常值
+53,normal,20:00000000 21:1feaa7b0 22:00000000 23:00000000,通用寄存器20-23的数值分别为0x00000000、0x1feaa7b0、0x00000000、0x00000000，寄存器数据正常，无异常值
+56,normal,special purpose registers,特殊功能寄存器状态输出，记录系统关键控制参数，无异常标识
+58,anomaly,rts panic! - stopping execution,实时系统（rts）触发恐慌机制并停止执行，表明系统发生致命错误（可能涉及内核崩溃、硬件故障或关键资源耗尽），属于严重系统级异常，导致程序终止运行
+59,normal,1 torus receiver x- input pipe error(s) (dcr 0x02ed) detected and corrected,检测到1次环面接收器X-方向输入管道错误（DCR寄存器值0x02ed），已通过硬件纠错修复，属于通信链路正常容错处理
+60,normal,data address: 0x00000002,数据地址为0x00000002，属于程序执行过程中的正常数据访问地址输出
+61,normal,4:0000000e 5:000865b0 6:1fea7b68 7:00089478,通用寄存器4-7的数值分别为0x0000000e、0x000865b0、0x1fea7b68、0x00089478，寄存器数据正常，无异常值
+62,normal,8:7c1b0040 9:00000000 10:00090000 11:0000003c,通用寄存器8-11的数值分别为0x7c1b0040、0x00000000、0x00090000、0x0000003c，寄存器数据正常，无异常值
+63,normal,16:00000000 17:00089b10 18:001e7ea0 19:00000001,通用寄存器16-19的数值分别为0x00000000、0x00089b10、0x001e7ea0、0x00000001，寄存器数据正常，无异常值
+64,normal,20:00008000 21:001e7e94 22:00250000 23:00000026,通用寄存器20-23的数值分别为0x00008000、0x001e7e94、0x00250000、0x00000026，寄存器数据正常，无异常值
+65,normal,24:00000000 25:0000000e 26:000865b0 27:00089ae0,通用寄存器24-27的数值分别为0x00000000、0x0000000e、0x000865b0、0x00089ae0，寄存器数据正常，无异常值
+66,normal,28:48000848 29:00000008 30:0000000e 31:000865b0,通用寄存器28-31的数值分别为0x48000848、0x00000008、0x0000000e、0x000865b0，寄存器数据正常，无异常值
+67,normal,lr:0000d9ac cr:48000828 xer:00000002 ctr:0000e248,链接寄存器（lr）、条件寄存器（cr）、异常寄存器（xer）、计数寄存器（ctr）数值正常，无异常标识
+68,normal,rts internal error,实时系统（rts）内部错误，未触发执行停止，属于轻微内部异常，需关注后续是否重复出现
+70,normal,16:00000000 17:00000000 18:001e7ea0 19:ffffffff,通用寄存器16-19的数值分别为0x00000000、0x00000000、0x001e7ea0、0xffffffff，寄存器数据正常，无异常值
+71,normal,ciod: Message code 0 is not 51 or 4294967295,ciod进程接收的消息代码0不符合预期的51或4294967295，属于消息格式轻微错误，未影响进程运行
+72,normal,ciod: pollControlDescriptors: Detected the debugger died.,ciod进程通过pollControlDescriptors检测到调试器已终止，属于调试工具状态变更，无系统核心功能影响
+73,normal,"ciod: for node 39, read continuation request but ioState is 0",ciod进程为节点39读取继续请求时，发现I/O状态为0（未就绪），属于正常I/O状态同步延迟，无故障关联
+74,normal,ciod: cpu 0 at treeaddr 222 sent unrecognized message 0xffffffff,节点222的CPU 0发送未识别的消息0xffffffff至ciod进程，属于通信消息格式异常，未触发系统中断
+75,anomaly,machine check interrupt (bit=0x1d): L2 dcache unit data parity error,机器检查中断触发（位标识0x1d），具体为L2数据缓存单元数据奇偶校验错误，表明缓存数据完整性受损，属于硬件类存储组件异常，可能导致数据读取错误或程序运行异常
+76,normal,0:00001580 1:1feaa6e0 2:1eeeeeee 3:00000000,通用寄存器0-3的数值分别为0x00001580、0x1feaa6e0、0x1eeeeeee、0x00000000，寄存器数据正常，无异常值
+82,normal,lr:00015d74 cr:48002244 xer:00000002 ctr:00000000,链接寄存器（lr）、条件寄存器（cr）、异常寄存器（xer）、计数寄存器（ctr）数值正常，无异常标识
+83,normal,ciod: LOGIN open(/bgl/apps/scaletest/performance/linpack-64x512/) failed: Permission denied,ciod进程登录时尝试打开指定目录失败，原因是权限不足，属于文件权限配置问题，非系统异常
+84,anomaly,machine check interrupt (bit=0x06): L3 major internal error,机器检查中断触发（位标识0x06），具体为L3缓存重大内部错误，表明L3缓存核心功能故障，无法通过硬件纠错修复，属于严重硬件类存储异常，可能导致系统性能大幅下降或程序崩溃
+85,normal,L3 global control register: 0x001249f0,L3全局控制寄存器值为0x001249f0，缓存控制参数配置正常，无异常设置
+86,normal,start prefetching........................0,预取功能禁用（值为0），属于L3缓存正常预取策略配置
+87,normal,disable speculative access...............0,推测访问功能启用（值为0），缓存访问优化功能正常
+88,normal,close EDRAM pages as soon as possible....0,EDRAM页面快速关闭功能禁用（值为0），属于正常内存管理配置
+89,normal,size of scratchpad portion of L3.........0 (0M),L3缓存的暂存区大小为0M，属于正常缓存分区配置
+90,normal,disable all access to cache directory....0,缓存目录全访问禁用功能关闭（值为0），缓存目录访问正常
+91,normal,write buffer commit threshold............2,写缓冲区提交阈值为2，属于正常I/O优化配置
+92,normal,size of DDR we are caching...............1 (512M),缓存的DDR内存大小为512M，属于正常内存缓存配置
+93,normal,prefetch depth for core 0................1,核心0的预取深度为1，属于正常缓存预取配置
+94,normal,max number of outstanding prefetches.....7,最大未完成预取数为7，属于正常缓存性能优化配置
+95,normal,turn on hidden refreshes.................1,隐藏刷新功能启用（值为1），内存刷新机制正常激活
+96,normal,disable write lines 2:4..................0,2-4号线写功能启用（值为0），内存总线写操作正常
+97,normal,capture first directory correctable error address..0,首次目录可纠正错误地址捕获功能禁用（值为0），属于正常错误日志配置
+98,normal,disable flagging of DDR UE's as major internal error.0,DDR不可纠正错误（UE）标记为重大内部错误的功能启用（值为0），错误分级机制正常
+99,normal,correctable error detected in directory 1......0,目录1检测到的可纠正错误数为0，缓存目录数据完整性正常
+100,normal,uncorrectable error detected in directory 0....0,目录0检测到的不可纠正错误数为0，缓存目录功能正常
+101,normal,correctable error detected in EDRAM bank 0.....0,EDRAM Bank 0检测到的可纠正错误数为0，EDRAM存储单元正常
+102,normal,uncorrectable error detected in EDRAM bank 1...0,EDRAM Bank 1检测到的不可纠正错误数为0，EDRAM存储单元正常
+103,normal,parity error in bank 1.........................0,Bank 1的奇偶校验错误数为0，存储单元数据完整性正常
+104,normal,parity error in read queue 0...................0,读队列0的奇偶校验错误数为0，数据读取通道正常
+105,normal,number of correctable errors detected in L3 directories...0,L3目录累计检测到的可纠正错误数为0，缓存目录正常
+106,normal,interrupt threshold...0,中断阈值为0，属于正常中断触发配置
+107,normal,number of lines with parity errors written to L3 EDRAMs...0,写入L3 EDRAM的带奇偶校验错误的行数为0，数据写入完整性正常
+108,anomaly,DDR machine check register: 0x00000000 0x00010000,DDR内存机器检查寄存器值为0x00000000 0x00010000，寄存器标识DDR内存存在硬件级故障，属于内存核心组件异常，可能导致内存访问失败或数据丢失
+109,normal,memory and bus summary...........................0,内存和总线汇总错误数为0，内存总线传输功能正常
+110,normal,command manager unit summary.....................0,命令管理单元汇总错误数为0，命令执行管理功能正常
+111,normal,memory manager refresh contention................0,内存管理器刷新冲突数为0，内存刷新机制正常
+112,normal,memory manager store buffer parity...............0,内存管理器存储缓冲区奇偶校验错误数为0，存储缓冲区数据正常
+113,normal,memory manager refresh...........................0,内存管理器刷新错误数为0，内存刷新操作正常
+114,normal,state machine....................................0,状态机错误数为0，系统状态转换机制正常
+115,normal,memory manager / command manager address parity..0,内存管理器/命令管理器地址奇偶校验错误数为0，地址传输完整性正常
+116,normal,regctl scancom interface.........................0,寄存器控制扫描通信接口错误数为0，接口通信正常
+117,normal,DDR failing info register: 0x00000000,DDR故障信息寄存器值为0x00000000，无故障信息记录，DDR内存状态正常
+118,normal,capture valid.........0,有效捕获标识为0，属于正常故障捕获状态
+121,normal,miscompare............0,比较不一致错误数为0，数据校验功能正常
+122,normal,uncorrectable error...0,不可纠正错误数为0，系统纠错机制正常
+123,normal,address parity error..0,地址奇偶校验错误数为0，地址传输完整性正常
+124,normal,correctable error.....0,可纠正错误数为0，系统无需要纠错的异常
+125,normal,qw trapped............0,四字捕获错误数为0，数据捕获功能正常
+126,normal,chip select...........0,芯片选择错误数为0，芯片选通功能正常
+127,normal,DDR failing data registers: 0x00000000 0x00000000,DDR故障数据寄存器值均为0x00000000，无故障数据记录，DDR内存正常
+128,normal,0x00000000 0x00000000,寄存器数值为0x00000000 0x00000000，属于正常状态输出
+129,normal,DDR failing address register: 0x00000000 0x00000000,DDR故障地址寄存器值均为0x00000000，无故障地址记录，DDR内存正常
+137,normal,"PrepareForService shutting down NodeCard(mLctn(R23-M0-NF), mCardSernum(203231503833343000000000594c31304b34333336303438), mLp(FF:F2:9F:16:D1:66:00:0D:60:E9:2E:99), mIp(10.2.1.232), mType(4)) as part of Service Action 338",服务操作338执行期间，关闭节点卡（位置R23-M0-NF，序列号203231503833343000000000594c31304b34333336303438），属于正常维护操作，无故障关联
+138,normal,EndServiceAction is restarting the NodeCards in midplane R74-M1 as part of Service Action 422,服务操作422执行期间，重启中板R74-M1中的所有节点卡，属于维护后正常重启流程，节点卡状态恢复正常
+139,normal,EndServiceAction 233 performed upon R02-M1-N0 by root,管理员root在R02-M1-N0节点执行服务操作233，操作执行完成，无异常反馈
+140,normal,Node card is not fully functional,节点卡未完全功能化，可能处于部分启动或维护状态，未触发故障告警，属于正常状态过渡
+141,normal,Can not get assembly information for node card,无法获取节点卡的组装信息，属于信息读取失败，未影响节点卡功能运行
+142,normal,Node card status: no ALERTs are active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD IS NOT ASSERTED. PGOOD ERROR LATCH IS ACTIVE. MPGOOD IS NOT OK. MPGOOD ERROR LATCH IS ACTIVE. The 2.5 volt rail is OK. The 1.5 volt rail is OK.,节点卡状态：无活跃告警，时钟模式为低功耗，时钟选择中板，物理JTAG和ASIC JTAG复位已断言，无温度错误，2.5V和1.5V电源轨正常，但PGOOD和MPGOOD状态异常（错误锁存激活），属于电源状态轻微异常，未影响核心功能
+143,normal,"Node card VPD check: U11 node in processor card slot J06 do not match. VPD ecid 04CC80924E2FFFFF0A0C1AD08ED2, found 04D58073172FFFFF07021AE0CED3",节点卡VPD校验：处理器插槽J06的U11节点ECID不匹配（预期04CC80924E2FFFFF0A0C1AD08ED2，实际04D58073172FFFFF07021AE0CED3），属于硬件标识不一致，未影响节点运行
+148,normal,16:00000c00 17:00000001 18:00000000 19:00000000,通用寄存器16-19的数值分别为0x00000c00、0x00000001、0x00000000、0x00000000，寄存器数据正常，无异常值
+169,normal,14 torus processor sram reception error(s) (dcr 0x02fc) detected and corrected,检测到14次环面处理器SRAM接收错误（DCR寄存器值0x02fc），均已通过硬件纠错修复，属于SRAM正常容错处理
+170,normal,SRAM correctable errors exceeds threshold (iar 0xc0005064 lr 0xc0005070),SRAM可纠正错误超出阈值（指令地址0xc0005064，链接地址0xc0005070），系统提示错误累积，需关注但未触发故障
+189,normal,Starting SystemController,系统控制器启动中，属于系统初始化正常流程
+190,normal,Controlling BG/L rows [ 0 1 2 3 ],系统控制器管理BG/L系统0-3行节点，属于正常节点管理配置
+191,normal,Running as background command,命令以后台模式运行，属于正常程序执行模式配置
+192,normal,data storage interrupt,数据存储中断，属于正常数据存储流程中的中断事件，无故障关联
+192,anomaly,data storage interrupt,数据存储中断异常触发，表明数据写入/读取过程中发生不可恢复错误，导致存储操作中断，属于硬件类存储异常，可能导致数据丢失或存储设备故障
+193,normal,exception syndrome register: 0x00800000,异常综合征寄存器值为0x00800000，记录异常特征，无严重故障标识
+194,normal,machine check: i-fetch......................0,指令获取相关机器检查错误数为0，指令获取功能正常
+195,normal,program interrupt: privileged instruction...0,特权指令相关程序中断数为0，特权指令执行正常
+196,normal,floating point operation....................0,浮点运算相关中断数为0，浮点运算功能正常
+197,normal,store operation.............................1,存储操作相关中断数为1，属于正常存储中断统计
+198,normal,data store interrupt caused by dcbf.........0,DCBF指令导致的数据存储中断数为0，数据缓存操作正常
+199,normal,auxiliary processor.........................0,辅助处理器相关中断数为0，辅助处理器功能正常
+200,normal,byte ordering exception.....................0,字节序异常数为0，数据字节序处理正常
+201,normal,program interrupt: fp cr update.............0,浮点控制寄存器更新相关程序中断数为0，浮点控制配置正常
+202,normal,program interrupt: fp cr field .............0,浮点控制寄存器字段相关程序中断数为0，浮点控制字段访问正常
+203,normal,0:000008ce 1:00086000 2:1eeeeeee 3:1feaa770,通用寄存器0-3的数值分别为0x000008ce、0x00086000、0x1eeeeeee、0x1feaa770，寄存器数据正常，无异常值
+204,normal,4:000008ce 5:ffffffff 6:00000038 7:00086590,通用寄存器4-7的数值分别为0x000008ce、0xffffffff、0x00000038、0x00086590，寄存器数据正常，无异常值
+205,normal,8:00000004 9:4e800020 10:3ed4bd98 11:6b26bf88,通用寄存器8-11的数值分别为0x00000004、0x4e800020、0x3ed4bd98、0x6b26bf88，寄存器数据正常，无异常值
+206,normal,24:1feaa7a0 25:00284538 26:00230000 27:00320000,通用寄存器24-27的数值分别为0x1feaa7a0、0x00284538、0x00230000、0x00320000，寄存器数据正常，无异常值
+207,normal,28:1feaa7b0 29:00000001 30:000008ce 31:1feaa790,通用寄存器28-31的数值分别为0x1feaa7b0、0x00000001、0x000008ce、0x1feaa790，寄存器数据正常，无异常值
+208,normal,lr:00004ed0 cr:28244842 xer:20000002 ctr:00086000,链接寄存器（lr）、条件寄存器（cr）、异常寄存器（xer）、计数寄存器（ctr）数值正常，无异常标识
+216,normal,external input interrupt (unit=0x02 bit=0x0c): torus sender y- retransmission error was corrected,外部输入中断（单元0x02，位0x0c）：环面发送器Y-方向重传错误已纠正，属于通信链路正常容错处理
+217,normal,external input interrupt (unit=0x01 bit=0x09): number of corrected SRAM errors has exceeded threshold,外部输入中断（单元0x01，位0x09）：SRAM可纠正错误数超出阈值，属于错误统计告警，无故障触发
+218,normal,suppressing further interrupts of same type,抑制同类中断的进一步上报，属于系统中断风暴防护机制，正常触发
+219,normal,symbol................0,符号标识为0，属于正常系统标识输出
+220,normal,mask..................0x00,掩码值为0x00，属于正常配置参数输出
+229,normal,lr:0047ac14 cr:20000022 xer:20000002 ctr:00000000,链接寄存器（lr）、条件寄存器（cr）、异常寄存器（xer）、计数寄存器（ctr）数值正常，无异常标识
+230,normal,Ido chip status changed: FF:F2:9F:16:E3:83:00:0D:60:E9:1C:7C ip=10.0.0.250 v=13 t=4 status=M Tue Sep 20 09:28:22 PDT 2005,Ido芯片状态变更（IP：10.0.0.250，版本13，类型4，状态M），变更时间为2005年9月20日，属于芯片正常状态切换
+259,normal,"While initializing node card iDo machine with LP of FF:F2:9F:16:DE:10:00:0D:60:E9:21:EF caught java.io.IOException: Could not contact iDo with LP=FF:F2:9F:16:DE:10:00:0D:60:E9:21:EF and IP=/10.3.1.112 because java.lang.RuntimeException: Communication error: (DirectIDo for Uninitialized DirectIDo for FF:F2:9F:16:DE:10:00:0D:60:E9:21:EF@/10.3.1.112:0 is in state = COMMUNICATION_ERROR, sequenceNumberIsOk = false, ExpectedSequenceNumber = 0, Reply Sequence Number = -1, timedOut = true, retries = 200, timeout = 1000, Expected Op Command = 5, Actual Op Reply = -1, Expected Sync Command = 10, Actual Sync Reply = -1): 初始化LP为FF:F2:9F:16:DE:10:00:0D:60:E9:21",EF的节点卡Ido机器时，捕获IO异常：无法通过IP=/10.3.1.112连接Ido芯片，原因是通信错误（状态为COMMUNICATION_ERROR，超时重试200次失败），属于初始化阶段通信临时故障
+264,normal,16:00000006 17:00001234 18:00088804 19:00089b08,通用寄存器16-19的数值分别为0x00000006、0x00001234、0x00088804、0x00089b08，寄存器数据正常，无异常值
+265,normal,20:00000009 21:ffffffff 22:00000008 23:00000000,通用寄存器20-23的数值分别为0x00000009、0xffffffff、0x00000008、0x00000000，寄存器数据正常，无异常值
+266,normal,24:00082d90 25:00000008 26:fffffff4 27:00040000,通用寄存器24-27的数值分别为0x00082d90、0x00000008、0xfffffff4、0x00040000，寄存器数据正常，无异常值
+269,normal,ciod: Unexpected eof at line 8193 of node map file /p/gb2/cabot/miranda/newmaps/8k_128x64x1_8x4x4.map,ciod进程读取节点映射文件时遇到意外文件结束（第8193行），属于文件格式轻微错误，未影响进程运行
+270,normal,ciod: Error creating node map from file /home/williams/miranda/src/vx_32k_256x256x1_8x4x4.map: Bad file descriptor,ciod进程从指定文件创建节点映射失败，原因是文件描述符无效，属于文件操作错误
+270,anomaly,ciod: Error creating node map from file /home/auselton/bgl/64mps.sequential.mapfile: Resource temporarily unavailable,ciod进程从/home/auselton/bgl/64mps.sequential.mapfile创建节点映射失败，原因是资源暂时不可用（可能涉及文件占用、内存不足或IO资源耗尽），属于系统资源分配异常，导致节点映射创建失败，影响节点配置流程
+271,normal,"ddr: Unable to steer rank=0, symbol=0 - rank is already steering symbol 2. Due to multiple symbols being over the correctable error threshold, consider replacing the card",DDR内存无法将0秩0符号导向冗余位（该秩已导向2符号），因多个符号超出可纠正错误阈值，系统建议更换硬件卡，当前仍可运行但硬件状态退化
+272,normal,"error threshold, consider replacing the card",错误阈值提示，建议更换硬件卡，属于系统硬件状态预警，无即时故障
+273,normal,"ddr: Unable to steer rank=0, symbol=10 - rank is already steering symbol 8. Due to multiple symbols being over the correctable error threshold, consider replacing the card",DDR内存无法将0秩10符号导向冗余位（该秩已导向8符号），因多个符号超出可纠正错误阈值，系统建议更换硬件卡，当前仍可运行但硬件状态退化
+274,normal,"error threshold, consider replacing the card",错误阈值提示，建议更换硬件卡，属于系统硬件状态预警，无即时故障
+284,normal,24:00000000 25:ffffc000 26:00000000 27:00000000,通用寄存器24-27的数值分别为0x00000000、0xffffc000、0x00000000、0x00000000，寄存器数据正常，无异常值
+287,normal,"PrepareForService is being done on this part (mLctn(R63-M0-NE), mCardSernum(203231503833343000000000594c31304b34333435303433), mLp(FF:F2:9F:16:C7:AC:00:0D:60:E9:38:53), mIp(10.6.2.186), mType(4)) by root",管理员root对部件（位置R63-M0-NE，序列号203231503833343000000000594c31304b34333435303433）执行预处理服务，属于正常维护操作
+288,normal,"ciod: Error loading /home/rfisher/sodscaling/flash2: program image too big, 381013696 > 266076160",ciod进程加载程序时失败，原因是程序镜像过大（381013696字节超出最大限制266076160字节），属于程序配置错误
+289,normal,critical input interrupt (unit=0x0b bit=0x0f): warning for tree A1 wire,关键输入中断（单元0x0b，位0x0f）：树状网络A1线路警告，属于通信链路预警，无故障触发
+290,normal,job 23109 timed out. Block freed.,任务23109超时，对应的区块已释放，属于任务调度正常超时处理
+295,normal,program interrupt,程序中断，属于正常程序执行流程中的中断事件，无故障关联
+295,anomaly,program interrupt,程序中断异常触发，表明程序执行过程中遇到不可恢复错误（如非法指令、内存访问越界），导致程序强制中断，属于软件类执行异常，影响任务正常完成
+298,normal,ciod: duplicate canonical-rank 31 to logical-rank 0 mapping at line 3 of node map file /p/gb2/pakin1/sweep3d-5x5x400-10mk-3mmi-1024pes-sweep/sweep.map,ciod进程读取节点映射文件时发现重复映射（规范秩31映射至逻辑秩0），属于文件配置错误，未影响节点通信
+299,normal,2354412 floating point alignment exceptions,累计出现2354412次浮点对齐异常，属于程序兼容性问题，未导致程序终止
+302,normal,"Problem communicating with node card, iDo machine with LP of FF:F2:9F:16:C4:59:00:0D:60:E9:3B:A6 caught java.lang.IllegalStateException: while executing CONTROL Operation caught java.lang.RuntimeException: Communication error: (DirectIDo for com.ibm.ido.DirectIDo object [FF:F2:9F:16:C4:59:00:0D:60:E9:3B:A6@/10.2.0.76:0 with image version 13 and card type 4] is in state = COMMUNICATION_ERROR, sequenceNumberIsOk = false, ExpectedSequenceNumber = 0, Reply Sequence Number = -1, timedOut = true, retries = 200, timeout = 1000, Expected Op Command = 2, Actual Op Reply = -1, Expected Sync Command = 8, Actual Sync Reply = -1): 与LP为FF:F2:9F:16:C4:59:00:0D:60:E9:3B",A6的节点卡Ido机器通信失败，捕获非法状态异常：执行控制操作时遇到通信错误（状态为COMMUNICATION_ERROR，超时重试200次失败），属于通信临时故障
+304,normal,Node card status: no ALERTS are active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD IS NOT ASSERTED. PGOOD ERROR LATCH IS ACTIVE. MPGOOD IS NOT OK. MPGOOD ERROR LATCH IS ACTIVE. THE 2.5 VOLT RAIL IS NOT OK. THE 1.5 VOLT RAIL IS NOT OK.,节点卡状态：无活跃告警，时钟模式为低功耗，时钟选择中板，物理JTAG和ASIC JTAG复位已断言，无温度错误，但PGOOD和MPGOOD状态异常（错误锁存激活），2.5V和1.5V电源轨异常，属于电源供应轻微故障，未完全影响节点功能
+306,normal,NodeCard power module U70 is not accessible,节点卡电源模块U70无法访问，属于电源模块状态读取失败，未影响模块供电
+312,normal,Target=ido://FF:F2:9F:16:E8:83:00:0D:60:E9:17:7C/JTAG/0 Message=Invalid JtagId = ffffffff: JTAG目标设备（ido://FF:F2:9F:16:E8:83:00:0D:60:E9:17,7C/JTAG/0）的JtagId无效（0xffffffff），属于JTAG配置错误，无硬件故障
+313,anomaly,MailboxMonitor::serviceMailboxes() lib_ido_error: -1019 socket closed,邮箱监控器执行serviceMailboxes()函数时触发lib_ido_error错误（错误码-1019），原因是套接字关闭，属于通信链路异常，导致邮箱消息传输中断，影响节点间通信
+315,anomaly,MidplaneSwitchController::sendTrain() port disconnected: R07-M1-L1-U19-E,中板交换控制器执行sendTrain()函数时，R07-M1-L1-U19-E端口断开连接，属于端口通信异常，导致数据传输中断，影响中板与节点的通信链路
+316,normal,Node card status: no ALERTS are active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD IS NOT ASSERTED. PGOOD ERROR LATCH IS ACTIVE. MPGOOD is OK. MPGOOD ERROR LATCH IS ACTIVE. The 2.5 volt rail is OK. The 1.5 volt rail is OK.,节点卡状态：无活跃告警，时钟模式为低功耗，时钟选择中板，物理JTAG和ASIC JTAG复位已断言，无温度错误，2.5V和1.5V电源轨正常，但PGOOD状态异常（错误锁存激活），属于电源状态轻微异常，未影响核心功能
+326,normal,"ciod: Error opening node map file /p/gb2/welcome3/32k_128x256x1_8x4x4.map, No such file or directory",ciod进程打开节点映射文件失败，原因是文件不存在，属于文件路径配置错误
+327,normal,shutdown complete,系统关闭完成，属于正常关机流程
+329,normal,"PrepareForService is being done on this Midplane (mLctn(R61-M0), mCardSernum( 203937503631353900000000594c31304b34323935303042)) by root",管理员root对中板（位置R61-M0，序列号203937503631353900000000594c31304b34323935303042）执行预处理服务，属于正常维护操作
+330,normal,PrepareForService is being done on this rack (R17) by root,管理员root对机架R17执行预处理服务，属于正常维护操作
+331,normal,LinkCard power module U58 is not accessible,链路卡电源模块U58无法访问，属于电源模块状态读取失败，未影响模块供电
+332,normal,NodeCard is not fully functional,节点卡未完全功能化，可能处于部分启动或维护状态，未触发故障告警，属于正常状态过渡
+333,normal,LinkCard is not fully functional,链路卡未完全功能化，可能处于部分启动或维护状态，未触发故障告警，属于正常状态过渡
+334,normal,this link card is not fully functional,该链路卡未完全功能化，可能处于部分启动或维护状态，未触发故障告警，属于正常状态过渡
+335,anomaly,no ethernet link,以太网链路缺失，表明网络接口未建立物理连接或以太网适配器故障，属于硬件类网络异常，导致节点无法接入以太网，影响远程管理和数据传输
+336,anomaly,"rts: kernel terminated for reason 1002rts: bad message header: too many packets, type=9, cpu=0, index=489505, total=1121468684",实时系统（rts）内核终止（原因码1002），具体为消息头错误：数据包过多（类型9，CPU 0，索引489505，总数1121468684），属于内核通信异常，导致系统核心功能终止，影响所有依赖rts的程序运行
+337,normal,"ciod: In packet from node 376.0 (R62-M1-N3-C:J15-U11), message code 2 is not 3 or 4294967295 (softheader=00380178 00030000 00000001 00000000)",ciod进程接收来自节点376.0的数据包时，发现消息代码2不符合预期的3或4294967295，属于消息格式错误，未影响通信
+353,normal,8:00100342 9:00000002 10:0fe00000 11:00090000,通用寄存器8-11的数值分别为0x00100342、0x00000002、0x0fe00000、0x00090000，寄存器数据正常，无异常值
+355,normal,ciod: Missing or invalid fields on line 1 of node map file /home/auselton/bgl/mapfiles/bgl.128mps.f64.map,ciod进程读取节点映射文件第1行时发现字段缺失或无效，属于文件格式错误，未影响节点配置
+356,anomaly,Power deactivated: R44-M1-NB,R44-M1-NB位置的电源已停用，属于电源供应异常，可能导致对应节点或组件断电，影响硬件设备运行和数据完整性
+363,normal,New ido chip inserted into the database: FF:F2:9F:16:C1:DC:00:0D:60:E9:3E:23 ip=10.4.0.31 v=13 t=4,新Ido芯片（IP：10.4.0.31，版本13，类型4）已插入数据库，属于硬件设备正常注册流程
+364,anomaly,"rts: kernel terminated for reason 1001rts: bad message header: invalid cpu, type=9768, cpu=127, index=268892392, total=268694848",实时系统（rts）内核终止（原因码1001），具体为消息头错误：CPU无效（类型9768，CPU 127，索引268892392，总数268694848），属于内核通信异常，导致系统核心功能终止，影响所有依赖rts的程序运行
+365,anomaly,"rts: kernel terminated for reason 1002rts: bad message header: too many packets, type=9, cpu=0, index=16836, total=1121124959",实时系统（rts）内核终止（原因码1002），具体为消息头错误：数据包过多（类型9，CPU 0，索引16836，总数1121124959），属于内核通信异常，导致系统核心功能终止，影响所有依赖rts的程序运行
+366,normal,max=366,最大值为366，属于正常统计数据输出
+367,normal,20,数值为20，属于正常参数配置输出
+369,anomaly,"MidplaneSwitchController::parityAlignment() pap failed: R61-M0-L3-U21-C, status=ffffffff ffffff80",中板交换控制器执行parityAlignment()函数时，R61-M0-L3-U21-C位置的PAP校验失败（状态码ffffffff ffffff80），属于奇偶校验异常，表明中板数据传输完整性受损，影响中板与节点的通信
+370,anomaly,ciod: Error creating node map from file /p/gb2/pakin1/sweep3d-5x5x400-10mk-3mmi-1024pes-sweep/sweep.map: Device or resource busy,ciod进程从指定文件创建节点映射失败，原因是设备或资源正忙（可能涉及文件被占用或IO资源耗尽），属于系统资源占用异常，导致节点映射创建失败，影响节点配置流程
+371,normal,ciod: Error creating node map from file /home/pakin1/sweep3d-2.2b/results/random3-8x32x32x2.map: Permission denied,ciod进程从指定文件创建节点映射失败，原因是权限不足，属于文件权限配置问题
+372,normal,4,数值为4，属于正常统计数据输出
+373,normal,", max=366",最大值为366，属于正常统计数据输出
+376,normal,DCR 0x2E2 : 0x00000000,DCR寄存器0x2E2的值为0x00000000，属于正常硬件寄存器状态输出
+377,normal,8,数值为8，属于正常参数配置输出
+378,normal,ax=366,ax参数值为366，属于正常配置参数输出
+380,normal,2,数值为2，属于正常参数配置输出
+385,anomaly,mmcs_server exited abnormally due to signal: Aborted,mmcs服务器因接收中止信号异常退出，属于服务运行异常，导致数据库管理功能中断，影响系统配置和节点管理
+386,normal,"ciod: Error loading /bgl/apps/scaletest/performance/MINIBEN/mb_243_0810/allreduce.rts: invalid or missing program image, Exec format error",ciod进程加载程序时失败，原因是程序镜像无效/缺失或执行格式错误，属于程序配置问题
+395,normal,24:00000000 25:000277ec 26:00000001 27:00004100,通用寄存器24-27的数值分别为0x00000000、0x000277ec、0x00000001、0x00004100，寄存器数据正常，无异常值
+397,normal,0,数值为0，属于正常统计数据输出
+405,normal,44,数值为44，属于正常统计数据输出
+409,normal,24:00000001 25:000277ec 26:00000002 27:00006102,通用寄存器24-27的数值分别为0x00000001、0x000277ec、0x00000002、0x00006102，寄存器数据正常，无异常值
+410,normal,28:000894a4 29:00000001 30:00088680 31:b0000040,通用寄存器28-31的数值分别为0x000894a4、0x00000001、0x00088680、0xb0000040，寄存器数据正常，无异常值
+413,normal,0:60000000 1:00088690 2:1eeeeeee 3:00088780,通用寄存器0-3的数值分别为0x60000000、0x00088690、0x1eeeeeee、0x00088780，寄存器数据正常，无异常值
+414,normal,4:00088770 5:00088760 6:00088750 7:000886b0,通用寄存器4-7的数值分别为0x00088770、0x00088760、0x00088750、0x000886b0，寄存器数据正常，无异常值
+415,normal,8:00088740 9:00088730 10:00088720 11:00088710,通用寄存器8-11的数值分别为0x00088740、0x00088730、0x00088720、0x00088710，寄存器数据正常，无异常值
+416,normal,12:00088700 13:1eeeeeee 14:0fee1380 15:0fee136c,通用寄存器12-15的数值分别为0x00088700、0x1eeeeeee、0x0fee1380、0x0fee136c，寄存器数据正常，无异常值
+419,normal,"ciod: Error loading ../homme/build.Linux/preqx -n 1800: invalid or missing program image, No such file or directory",ciod进程加载程序时失败，原因是程序镜像无效/缺失或文件不存在，属于程序配置问题
+446,normal,Ido packet timeout,Ido数据包超时，属于通信链路临时延迟，无故障关联
+447,anomaly,MailboxMonitor::serviceMailboxes() lib_ido_error: -1033 BGLERR_IDO_PKT_TIMEOUT connection lost to node/link/service card,邮箱监控器执行serviceMailboxes()函数时触发lib_ido_error错误（错误码-1033），原因是Ido数据包超时，导致与节点/链路/服务卡的连接丢失，属于通信链路异常，影响跨组件消息传输
+448,anomaly,ciod: Error reading message prefix after LOAD_MESSAGE on CioStream socket to 172.16.96.116:41882: Link has been severed: ciod进程在与172.16.96.116,41882的CioStream套接字上执行LOAD_MESSAGE后，读取消息前缀失败，原因是链路已断开，属于控制流通信异常，导致节点控制指令传输中断
+477,normal,8:01bb8348 9:00000028 10:ffffffe8 11:01bb8290,通用寄存器8-11的数值分别为0x01bb8348、0x00000028、0xffffffe8、0x01bb8290，寄存器数据正常，无异常值
+510,normal,"Node card VPD check: missing U11 node, VPD ecid 04D48465822FFFFF0E0E1BD096E1 in processor card slot J19",节点卡VPD校验：处理器插槽J19缺失U11节点（VPD ECID 04D48465822FFFFF0E0E1BD096E1），属于硬件配置缺失，未影响节点运行
+514,normal,Controlling BG/L rows [ 0 1 2 3 4 5 6 7 ],系统控制器管理BG/L系统0-7行节点，属于正常节点管理配置
+516,normal,"While initializing service card iDo with LP of FF:F2:9F:15:1F:7B:00:0D:60:EA:E0:84 caught java.io.IOException: Could not contact iDo with LP=FF:F2:9F:15:1F:7B:00:0D:60:EA:E0:84 and IP=/10.7.0.171 because java.lang.RuntimeException: Communication error: (DirectIDo for Uninitialized DirectIDo for FF:F2:9F:15:1F:7B:00:0D:60:EA:E0:84@/10.7.0.171:0 is in state = COMMUNICATION_ERROR, sequenceNumberIsOk = false, ExpectedSequenceNumber = 0, Reply Sequence Number = -1, timedOut = true, retries = 200, timeout = 1000, Expected Op Command = 5, Actual Op Reply = -1, Expected Sync Command = 10, Actual Sync Reply = -1): 初始化LP为FF:F2:9F:15:1F:7B:00:0D:60:EA:E0",84的服务卡Ido时，捕获IO异常：无法通过IP=/10.7.0.171连接Ido芯片，原因是通信错误（状态为COMMUNICATION_ERROR，超时重试200次失败），属于初始化阶段通信临时故障
+517,normal,"Expected 10 active FanModules, but found 9 ( Found J300 J301 J302 J303 J304 J306 J307 J308 J309 ).",预期10个风扇模块活跃，实际发现9个（已发现J300-J304、J306-J309），属于风扇模块配置缺失，未影响系统散热
+518,normal,BGLMaster has been started: ./BGLMaster --consoleip 127.0.0.1 --consoleport 32035 --configfile bglmaster.init --autorestart y,BGLMaster服务已启动，启动参数包含控制台IP、端口、配置文件及自动重启，服务初始化正常
+519,normal,"Found invalid node ecid in processor card slot J02, ecid 0000000000000000000000000000",处理器插槽J02发现无效节点ECID（0000000000000000000000000000），属于硬件标识无效，未影响节点功能
+520,normal,"Node card status: ALERT 0, ALERT 1, ALERT 2, ALERT 3 is (are) active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is not asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD is asserted. PGOOD error latch is clear. MPGOOD is OK. MPGOOD error latch is clear. The 2.5 volt rail is OK. The 1.5 volt rail is OK.",节点卡状态：告警0-3活跃，时钟模式为低功耗，时钟选择中板，物理JTAG复位已断言，ASIC JTAG复位未断言，无温度错误，电源状态正常，属于告警状态激活但无实质故障
+522,normal,"Problem communicating with service card, ido chip: 00000000:00000000:00000000:FFF29F15:1F48000D:60EAE0B7. java.io.IOException: Could not find EthernetSwitch on port:address 1:136: 与Ido芯片00000000:00000000:00000000:FFF29F15:1F48000D:60EAE0B7的服务卡通信失败，捕获IO异常：在端口地址1",136未找到以太网交换机，属于网络配置错误
+523,normal,Bad cable going into LinkCard (203937503438383700000000594C31314B35303134305945) Jtag (4) Port (C) - 2 bad wires,连接至链路卡（序列号203937503438383700000000594C31314B35303134305945）JTAG端口4、C端口的线缆损坏（2根线故障），属于硬件连接问题，未影响核心通信
+524,normal,Missing reverse cable: Cable R16-M0-L1 4 E (J13) --> R06-M1-L1 4 D (J15) is present BUT the reverse cable R06-M1-L1 1 E (J05) --> R16-M0-L1 1 D (J07) is missing,无负面故障关键词，单次上报，符合系统布线检测正常提示场景
+525,anomaly,Error: unable to mount filesystem,含核心异常关键词“Error”，对应文件系统挂载故障，符合Kc中“文件系统故障判定为异常”规则，无维护上下文标注
+526,anomaly,Lustre mount FAILED : bglio212 : block_id : location,含“FAILED”核心异常关键词，属于Lustre文件系统挂载失败场景，符合Liberty系统典型异常规则，无正常状态描述
+527,normal,"idoproxydb hit ASSERT condition: ASSERT expression=0 Source file=idotransportmgr.cpp Source line=1043 Function=int IdoTransportMgr::SendPacket(IdoUdpMgr, BglCtlPavTrace)",仅为ASSERT调试信息，无故障语义，单次上报无冗余
+529,normal,Microloader Assertion,属于系统初始化阶段正常调试断言提示，无负面关键词，无关联故障告警
+529,anomaly,Microloader Assertion,伴随硬件初始化失败关联告警，符合BG/L系统“断言+关联故障”异常判定规则，生产时段上报无维护上下文
+531,normal,0:00003000 1:00088850 2:1eeeeeee 3:0000e0c0,仅为寄存器正常数值输出，无故障相关语义，符合日志结构化字段正常展示场景
+533,normal,8:0000e0c0 9:00070000 10:000000e0 11:0008885c,寄存器数值无异常标识，无负面关键词，单次上报对应系统正常运行状态
+534,normal,28:ffffc0c8 29:000001ff 30:000001ff 31:000894a8,寄存器状态无故障提示，符合BG/L系统硬件状态正常上报格式
+538,anomaly,"MidplaneSwitchController::receiveTrain() iap failed: R63-M0-L2-U21-A, status=ffbffbff ec000000",含“failed”异常关键词，对应中板交换机接收故障，5秒内关联2节点冗余上报，符合硬件类异常冗余特征
+539,normal,rts tree/torus link training failed: wanted: A C X+ X- Y+ Y- Z+ Z- got: A C X+ Y+ Y- Z+ Z-,链路训练未完全匹配但无硬件故障描述，属于正常路由调整，单次瞬时上报无冗余
+540,normal,rts tree/torus link training failed: wanted: C X+ X- Y+ Y- Z+ Z- got: C X- Y+ Y- Z+,链路训练参数不匹配，无CRC错误、重传失败等异常关键词，符合BG/L环面网正常链路抖动场景
+541,normal,rts tree/torus link training failed: wanted: A B C X+ X- Y+ Y- Z+ Z- got: A B C X+ X- Y+ Z+ Z-,链路训练缺失部分参数，无关联故障告警，属于系统初始化阶段正常适配过程
+542,normal,rts tree/torus link training failed: wanted: A C X+ X- Y+ Y- Z+ Z- got: A C X+ Y+ Y- Z+,无硬件错误关键词，单次上报，对应环面网路由正常配置调整
+543,normal,rts tree/torus link training failed: wanted: C X+ X- Y+ Y- Z+ Z- got: C X+ Y+ Y- Z+ Z-,链路训练参数差异无故障语义，无冗余报告，符合BG/L网络拓扑适配正常场景
+544,normal,rts tree/torus link training failed: wanted: A B C X+ X- Y+ Y- Z+ Z- got: A B C X- Y+ Z+ Z-,无负面关键词，无关联告警，属于链路训练正常兼容范围
+546,normal,rts tree/torus link training failed: wanted: A C X+ X- Y+ Y- Z+ Z- got: A C X+ X- Y+ Y- Z-,链路训练参数不完全匹配，无重传失败、死锁等异常，符合环面网正常工作特性
+550,normal,"ddr: Unable to steer rank=0, symbol=12 - rank is already steering symbol 255. Due to multiple symbols being over the correctable error threshold, consider replacing the card",虽提示纠错阈值超限，但仅为维护建议，无当前硬件故障，符合正常状态提示规则
+564,anomaly,ciodb exited abnormally due to signal: Aborted,含“exited abnormally”“Aborted”异常关键词，对应数据库进程异常终止，无维护上下文，符合软件类异常判定规则
+565,normal,"ciod: Error loading /bgl/apps/SWL/stability/DDCMD//ddcMDbglV: invalid or missing program image, Permission denied",仅为权限不足导致的加载失败，无系统级故障语义，属于用户操作层面问题，非异常告警
+566,normal,ciod: generated 128 core files for program /g/g90/glosli/src/ddcMD/ddcMD1.1.18a/bin/ddcMDbglV,核心文件生成属于程序调试正常输出，无故障关键词，单次执行无冗余
+567,anomaly,rts: kernel terminated for reason 1001,含“kernel terminated”异常关键词，对应内核异常终止，无正常终止标识，符合BG/L软件类核心故障规则
+568,normal,rts: bad message header: cpu 127 invalid (softheader=7ffffc30 10023320 00001001 a2f8074f) PSR0=00000000 PSR1=00000000 PRXF=0000002a PIXF=00000007,仅为消息头格式错误，无关联系统故障，单次上报无冗余
+569,normal,rts: bad message header: packet index 4283373868 greater than max 366 (softheader=00000000 7ffffc40 7db7c4fe ff4f192c) PSR0=00000100 PSR1=00000000 PRXF=0002000a PIXF=00000007,消息索引异常无故障语义，无负面关键词，符合日志格式偶发错误场景
+570,normal,rts: bad message header: index 0 greater than total 0 (softheader=00000002 00000001 00000000 00000000) PSR0=00000000 PSR1=00000000 PRXF=0000002a PIXF=00000007,消息头格式异常但无系统影响，无冗余报告，属于正常通信抖动
+571,normal,rts: bad message header: expecting type 57 instead of type 3 (softheader=00a8ed88 86280003 00000002 00000000) PSR0=00001f01 PSR1=00000000 PRXF=00000002 PIXF=00000007,消息类型不匹配无故障关键词，无关联告警，符合单次通信异常场景
+572,anomaly,kernel panic,核心异常关键词“kernel panic”，对应内核崩溃故障，符合Kc中“kernel panic直接判定为异常”规则，无正常状态描述
+574,normal,mmcs_db_server has been started: ./mmcs_db_server --useDatabase BGL --dbproperties serverdb.properties --iolog /bgl/BlueLight/logs/BGL --reconnect-blocks all --shutdown-timeout 120,数据库服务正常启动日志，含明确启动参数，无负面语义
+582,normal,iar 00105e94 dear 02f5883c,仅为指令地址与数据地址正常输出，无故障标识，符合BG/L系统硬件状态结构化日志格式
+583,normal,SerialNumber(000000000000000000000000fff29f16bbdb000d60e94424) IpAddress(0.0.0.0) Status(A),设备序列号与IP地址正常上报，Status(A)表示活跃状态，无故障提示
+584,normal,"NFS Mount failed on bglio5, slept 19 seconds, retrying (1)",虽提示挂载失败，但含“retrying”重试标识，属于临时网络波动导致的正常重试流程，非永久性故障
+585,normal,CHECK_INITIAL_GLOBAL_INTERRUPT_VALUES,全局中断初始值检查日志，属于系统初始化正常校验步骤，无异常关键词
+586,anomaly,Lustre mount FAILED : bglio660 : point /p/gb1,含“FAILED”核心异常关键词，对应Lustre文件系统挂载失败，无重试标识，符合软件类异常规则，无维护上下文
+599,normal,28:00000004 29:00000001 30:00089cd0 31:000894a8,寄存器数值无故障语义，无负面关键词，符合BG/L系统正常运行时的状态上报
+809,normal,"Error getting detailed hw info for node, caught java.io.IOException: Problems with the chip, could not pull all resets",虽含“Error”，但仅为硬件信息获取失败，无芯片实际故障，属于临时通信问题，单次上报无冗余
+810,normal,Node card status: no ALERTS are active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is not asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD IS NOT ASSERTED. PGOOD ERROR LATCH IS ACTIVE. MPGOOD IS NOT OK. MPGOOD ERROR LATCH IS ACTIVE. The 2.5 volt rail is OK. The 1.5 volt rail is OK.,明确标注“no ALERTS are active”，无硬件告警，符合节点卡正常状态描述
+811,normal,Node card status: no ALERTS are active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is not asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD IS NOT ASSERTED. PGOOD ERROR LATCH IS ACTIVE. MPGOOD IS NOT OK. MPGOOD ERROR LATCH IS ACTIVE. THE 2.5 VOLT RAIL IS NOT OK. THE 1.5 VOLT RAIL IS NOT OK.,无活跃告警，电压异常已标注但未触发故障，属于状态提示而非异常
+822,normal,data cache search parity error detected. attempting to correct,含“detected. attempting to correct”，表示奇偶校验错误正在纠正，无纠正失败标识，符合ECC正常纠错流程
+913,anomaly,"Error receiving packet on tree network, expecting type 57 instead of type 3 (softheader=009756d5 8bfa0003 00000002 00000000) PSR0=00001f01 PSR1=00000000 PRXF=00000002 PIXF=00000007",含“Error”异常关键词，树状网络接收数据包类型错误，伴随MPI操作失败关联告警，符合软件类通信异常规则
+914,normal,ddr: activating redundant bit steering for next allocation: rank=0 symbol=18,属于DDR冗余位导向正常激活，为硬件冗余机制测试，无故障语义，符合BG/L内存保护正常流程
+989,normal,L1 DCACHE summary averages: #ofDirtyLines: 232 out of 1024 #ofDirtyDblWord: 686 out of 4096,L1数据缓存状态统计，无错误关键词，符合系统缓存正常运行状态报告
+991,normal,Temperature Over Limit on link card,链路卡温度超限但无硬件损坏描述，属于预警提示，未触发故障中断，单次上报无冗余
+992,normal,Link PGOOD error latched on link card,PGOOD错误锁定但无链路中断，属于状态记录，无关联故障，符合硬件状态正常监控场景
+1033,normal,total of 1 ddr error(s) detected and corrected,DDR错误已检测并纠正，无残留故障，符合ECC正常纠错规则，单次上报未超频次阈值
+1035,normal,9 L3 EDRAM error(s) (dcr 0x0157) detected and corrected,L3 EDRAM错误已纠正，无异常关键词，上报频次未超BG/L硬件故障速率阈值（单日≤3次）
+1036,normal,"4 ddr errors(s) detected and corrected on rank 0, symbol 29, bit 5",DDR错误已纠正，无故障残留，符合内存正常纠错流程，无冗余报告
+1037,normal,1 tree receiver 1 in re-synch state event(s) (dcr 0x0185) detected,树状接收器同步状态事件，无故障语义，单次上报符合正常通信同步场景
+1038,normal,"CE sym 29, at 0x0ea9fd60, mask 0x40",CE（Correctable Error）表示可纠正错误，无故障提示，符合ECC正常纠错日志格式
+1039,normal,instruction cache parity error corrected,指令缓存奇偶校验错误已纠正，无纠正失败标识，符合硬件正常容错机制
+1049,normal,instruction address: 0x000093fc,仅为指令地址正常输出，无故障相关语义，符合BG/L系统结构化日志展示规则
+1052,normal,instruction plb error.............0,PLB（Processor Local Bus）无错误，数值“0”表示正常状态，符合硬件总线状态报告格式
+1053,normal,data write plb error..............0,数据写入PLB无错误，数值“0”对应正常状态，无故障提示
+1054,normal,tlb error.........................0,TLB（Translation Lookaside Buffer）无错误，数值“0”表示正常，符合内存管理单元状态报告
+1055,normal,i-cache parity error..............0,指令缓存奇偶校验无错误，数值“0”对应正常状态，无故障语义
+1056,normal,d-cache flush parity error........1,数据缓存刷新奇偶校验错误但无故障扩展，单次出现未超阈值，符合缓存正常偶发错误场景
+1057,normal,imprecise machine check...........0,非精确机器检查无异常，数值“0”表示正常，符合BG/L机器检查状态报告规则
+1058,normal,machine state register: 0x0002f900,机器状态寄存器数值无异常标识，符合系统正常运行时的寄存器状态
+1059,normal,wait state enable.................0,等待状态未启用，数值“0”表示正常配置，无故障提示
+1060,normal,critical input interrupt enable...0,关键输入中断未启用，数值“0”为正常配置，无异常语义
+1061,normal,external input interrupt enable...0,外部输入中断未启用，数值“0”表示正常配置，符合系统中断管理规则
+1062,normal,"problem state (0=sup,1=usr).......1",问题状态为用户模式（usr），属于正常运行状态，无故障提示
+1063,normal,floating point instr. enabled.....1,浮点指令已启用，数值“1”表示正常配置，符合运算单元正常工作状态
+1063,anomaly,floating point unavailable interrupt,含“unavailable interrupt”异常关键词，浮点指令不可用中断，无正常启用标识，符合软件类运算单元异常规则
+1064,normal,machine check summary.............1,机器检查摘要无故障提示，数值“1”为正常统计标识，无负面语义
+1064,anomaly,machine check interrupt,核心异常关键词“machine check interrupt”，对应机器检查中断故障，无正常状态描述，符合BG/L硬件类异常判定规则
+1065,normal,floating pt ex mode 1 enable......1,浮点异常模式1已启用，数值“1”为正常配置，符合运算单元功能开启状态
+1066,normal,debug wait enable.................0,调试等待未启用，数值“0”表示正常配置，无故障提示
+1067,normal,debug interrupt enable............0,调试中断未启用，数值“0”为正常配置，符合系统调试模式管理规则
+1068,normal,instruction address space.........0,指令地址空间无异常，数值“0”表示正常，符合内存地址管理状态
+1069,normal,data address space................0,数据地址空间无异常，数值“0”表示正常，符合内存地址分配规则
+1071,normal,disable store gathering..................0,存储聚合未禁用，数值“0”为正常配置，符合内存存储管理规则
+1072,normal,disable apu instruction broadcast........0,APU指令广播未禁用，数值“0”表示正常配置，符合辅助处理单元工作规则
+1073,normal,ciod: LOGIN chdir(/p/gb/rfisher/StirTurbDirect/16) failed: No such file or directory,仅为目录不存在导致的登录失败，无系统级故障，属于用户操作问题，非异常告警
+1074,normal,"ciod: Error loading /home/glosli/src/ddcMD/ddcMD1.1.17/bin/ddcMDbglV: invalid or missing program image, No such file or directory",程序镜像缺失导致加载失败，无系统故障关联，属于文件路径问题，非异常
+1075,normal,BGLMaster has been started: ./BGLMaster --consoleip 127.0.0.1 --consoleport 32035 --configfile bglmaster.init --autorestart y --db2profile /u/bgdb2cli/sqllib/db2profile --dbproperties db.properties,BGLMaster服务正常启动，含完整启动参数，无负面语义
+1076,normal,ciodb has been restarted.,数据库服务正常重启日志，无异常关键词，符合服务管理正常操作流程
+1077,normal,idoproxydb has been started: Name: V1R2M0_480_2005 Input parameters: -enableflush -loguserinfo db.properties BlueGene1,idoproxydb服务正常启动，含明确参数，无故障提示
+1078,normal,"critical input interrupt (unit=0x0b bit=0x0a): warning for torus z+ wire, suppressing further interrupts of same type",含“warning”但已抑制后续中断，无故障扩展，属于正常预警提示，无冗余报告
+1079,normal,1 tree receiver 1 in re-synch state event(s) (dcr 0x0185) detected over 516 seconds,树状接收器同步事件，516秒内仅1次，未超频次阈值，无故障语义
+1080,normal,2 torus receiver x+ input pipe error(s) (dcr 0x02ec) detected and corrected over 593 seconds,环面接收器输入管道错误已纠正，593秒内仅2次，符合正常纠错频次，无冗余特征
+1081,normal,"1 ddr error(s) detected and corrected on rank 0, symbol 35 over 4307 seconds",DDR错误已纠正，4307秒内仅1次，未超BG/L内存故障速率阈值（10次/小时）
+1082,normal,total of 1 ddr error(s) detected and corrected over 28783 seconds,DDR错误已纠正，长时间内仅1次，符合内存正常容错机制
+1083,normal,2 L3 EDRAM error(s) (dcr 0x0157) detected and corrected over 282 seconds,L3 EDRAM错误已纠正，频次未超阈值，无故障残留
+1084,anomaly,idoproxy communication failure: socket closed,含“communication failure”“socket closed”异常关键词，idoproxy通信故障，无正常连接恢复标识，符合软件类通信异常规则
+1085,normal,2 torus receiver y+ input pipe error(s) (dcr 0x02ee) detected and corrected,环面接收器错误已纠正，无故障关键词，符合正常纠错流程
+1086,normal,disable trace broadcast..................0,跟踪广播未禁用，数值“0”为正常配置，符合系统跟踪功能管理规则
+1087,normal,guaranteed instruction cache block touch.0,指令缓存块触摸功能未启用，数值“0”表示正常配置，无故障提示
+1088,normal,force load/store alignment...............0,强制加载/存储对齐未启用，数值“0”为正常配置，符合内存操作管理规则
+1089,normal,icache prefetch depth....................0,指令缓存预取深度为0，属于正常配置，无性能故障提示
+1096,anomaly,rts panic! - stopping execution,含“panic!”核心异常关键词，rts进程崩溃并停止执行，符合BG/L软件类严重故障规则，无正常终止标识
+1097,normal,ciod: pollControlDescriptors: Detected the debugger died.,仅检测到调试器终止，无系统进程影响，属于调试工具状态提示，非异常告警
+1101,normal,Machine Check Status Register: 0xa0800000,机器检查状态寄存器数值无异常标识，符合BG/L硬件状态正常上报格式
+1102,normal,Machine State Register: 0x00003000,机器状态寄存器数值无故障语义，符合系统正常运行时的寄存器状态
+1103,normal,Core Configuration Register 0: 0x00002000,核心配置寄存器数值为正常配置，无异常标识
+1104,normal,DDR failing info register: DDR Fail Info Register: 0x80004000,DDR故障信息寄存器无实际故障记录，数值为正常标识
+1105,normal,General Purpose Registers:,通用寄存器列表展示，无错误关键词，符合BG/L结构化日志正常输出格式
+1106,normal,r00=0x00003000 r01=0x00088850 r02=0x1eeeeeee r03=0x0000ef58,通用寄存器数值无异常，符合系统正常运行状态
+1108,normal,r08=0x0000ef48 r09=0x00070000 r10=0x000000e0 r11=0x0008885c,通用寄存器数值无故障提示，符合硬件正常工作状态
+1109,normal,r12=0x42000024 r13=0x1eeeeeee r14=0xffffffff r15=0xffffffff,通用寄存器数值无异常标识，符合内存正常分配状态
+1110,normal,r16=0x00000000 r17=0x00000000 r18=0x00000000 r19=0x00000000,通用寄存器数值为默认正常状态，无故障语义
+1111,normal,r20=0x00000000 r21=0x00000000 r22=0x00000000 r23=0x00000000,通用寄存器数值无异常，符合系统初始化正常状态
+1112,normal,r24=0x00000000 r25=0xffffc000 r26=0x00000000 r27=0x00000000,通用寄存器数值无故障提示，符合内存正常映射状态
+1113,normal,r28=0xffffc0c8 r29=0x000001ff r30=0x000001ff r31=0x0008db74,通用寄存器数值无异常标识，符合系统正常运行状态
+1114,normal,Special Purpose Registers:,特殊用途寄存器列表展示，无错误关键词，符合BG/L结构化日志格式
+1115,normal,lr=0x00000474 cr=0x44000024 xer=0x20000002 ctr=0x00000000,特殊用途寄存器数值无异常，符合硬件正常工作状态
+1116,normal,msr=0x00003000 dear=0x0012af3c esr=0x00000000 fpscr=0x82064000,特殊用途寄存器数值无故障语义，符合系统正常运行状态
+1117,normal,dbcr0=0x00000000 dbsr=0x00000000 ccr0=0x40002000,调试与控制寄存器数值无异常，符合调试功能正常配置状态
+1118,normal,Floating Point Status and Control Register: 0x82064000,浮点状态控制寄存器数值无异常，符合浮点运算单元正常工作状态
+1119,normal,exception summary........................1,异常摘要统计无实际故障，数值“1”为正常统计标识，无负面语义
+1120,normal,enabled exception summary................0,启用异常摘要无记录，数值“0”表示正常，无故障提示
+1121,normal,invalid operation exception (software)...0,软件无效操作异常无记录，数值“0”表示正常，符合软件运行状态
+1122,normal,overflow exception.......................0,溢出异常无记录，数值“0”表示正常，符合运算单元工作规则
+1123,normal,underflow exception......................0,下溢异常无记录，数值“0”表示正常，符合浮点运算正常状态
+1124,normal,divide-by-zero exception.................0,除零异常无记录，数值“0”表示正常，符合运算逻辑正常状态
+1125,normal,inexact exception........................0,不精确异常无记录，数值“0”表示正常，符合浮点运算精度要求
+1126,normal,invalid (Inf/Inf)........................0,无效（无穷大/无穷大）异常无记录，数值“0”表示正常，符合运算逻辑正常状态
+1127,normal,fraction inexact.........................0,分数不精确异常无记录，数值“0”表示正常，符合浮点运算精度规则
+1128,normal,quiet NaN................................0,静默非数字异常无记录，数值“0”表示正常，符合运算单元正常工作状态
+1129,normal,minus zero...............................0,负零异常无记录，数值“0”表示正常，符合数值运算正常规则
+1130,normal,minus normalized number..................0,负规格化数异常无记录，数值“0”表示正常，符合浮点运算规则
+1131,normal,minus denormalized number................0,负非规格化数异常无记录，数值“0”表示正常，符合浮点运算正常状态
+1132,normal,plus zero................................0,正零异常无记录，数值“0”表示正常，符合数值运算规则
+1133,normal,plus denormalized number.................0,正非规格化数异常无记录，数值“0”表示正常，符合浮点运算规则
+1134,normal,plus normalized number...................0,正规格化数异常无记录，数值“0”表示正常，符合浮点运算正常状态
+1135,normal,reserved.................................0,保留字段无异常，数值“0”表示正常，符合寄存器配置规则
+1136,normal,invalid operation exception (int cnvt)...0,整数转换无效操作异常无记录，数值“0”表示正常，符合数据转换规则
+1137,normal,enable invalid operation exceptions......0,无效操作异常未启用，数值“0”为正常配置，符合异常管理规则
+1138,normal,enable overflow exceptions...............0,溢出异常未启用，数值“0”为正常配置，符合异常管理规则
+1139,normal,enable underflow exceptions..............0,下溢异常未启用，数值“0”为正常配置，符合异常管理规则
+1140,normal,enable divide-by-zero exceptions.........0,除零异常未启用，数值“0”为正常配置，符合异常管理规则
+1141,normal,enable inexact exceptions................0,不精确异常未启用，数值“0”为正常配置，符合异常管理规则
+1142,normal,enable non-IEEE mode.....................0,非IEEE模式未启用，数值“0”为正常配置，符合浮点运算标准规则
+1143,normal,round nearest............................0,就近舍入模式启用，数值“0”为正常配置，符合浮点运算精度规则
+1144,normal,round toward -infinity...................0,向负无穷舍入模式未启用，数值“0”为正常配置，符合浮点运算规则
+1145,normal,Floating Point Registers:,浮点寄存器列表展示，无错误关键词，符合BG/L结构化日志正常输出格式
+1146,normal,fpr12=0xffffffff ffffffff ffffffff ffffffff,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1147,normal,L3 ecc status register: 00200000,L3 ECC状态寄存器数值无异常，符合缓存纠错正常状态
+1148,normal,start flushing...........................0,刷新功能未启动，数值“0”为正常配置，符合缓存管理规则
+1149,normal,disable speculative access...............0,推测访问未禁用，数值“0”为正常配置，符合内存访问管理规则
+1150,normal,close EDRAM pages as soon as possible....0,EDRAM页面未立即关闭，数值“0”为正常配置，符合内存管理规则
+1151,normal,size of scratchpad portion of L3.........0 (0M),L3暂存区大小为0，属于正常配置，无性能故障提示
+1152,normal,disable all access to cache directory....0,缓存目录访问未禁用，数值“0”为正常配置，符合缓存管理规则
+1153,normal,write buffer commit threshold............2,写缓冲区提交阈值为2，属于正常配置，符合内存存储性能规则
+1154,normal,size of DDR we are caching...............1 (512M),DDR缓存大小为512M，属于正常配置，符合内存管理规则
+1155,normal,prefetch depth for PLB slave.............1,PLB从设备预取深度为1，属于正常配置，符合总线传输性能规则
+1156,normal,max number of outstanding prefetches.....7,最大未完成预取数为7，属于正常配置，符合内存访问性能规则
+1157,normal,turn on hidden refreshes.................1,隐藏刷新已启用，数值“1”为正常配置，符合内存维护规则
+1158,normal,disable write lines 2:4..................0; 2,4写行未禁用，数值“0”为正常配置，符合缓存写操作规则
+1159,normal,capture first directory uncorrectable error address..0,未捕获目录不可纠正错误地址，数值“0”表示正常，无故障记录
+1160,normal,disable flagging of DDR UE's as major internal error.0,DDR不可纠正错误未标记为主要内部错误，数值“0”为正常配置，符合错误分级规则
+1161,normal,correctable error detected in directory 0......0,目录0无纠正错误检测，数值“0”表示正常，符合缓存纠错规则
+1162,normal,uncorrectable error detected in external DDR...1,外部DDR检测到不可纠正错误但已处理，无系统影响，符合内存冗余保护规则
+1163,normal,correctable error detected in EDRAM bank 1.....0,EDRAM Bank 1无纠正错误检测，数值“0”表示正常，符合缓存纠错规则
+1164,normal,uncorrectable error detected in EDRAM bank 0...0,EDRAM Bank 0无不可纠正错误检测，数值“0”表示正常，符合缓存故障规则
+1165,normal,parity error in write buffer...................0,写缓冲区无奇偶校验错误，数值“0”表示正常，符合总线传输规则
+1166,normal,parity error in read queue 0...................0,读队列0无奇偶校验错误，数值“0”表示正常，符合总线传输规则
+1167,normal,number of correctable errors detected in L3 EDRAMs........0,L3 EDRAM无纠正错误检测，数值“0”表示正常，符合缓存纠错规则
+1168,normal,interrupt threshold...0,中断阈值为0，属于正常配置，符合中断管理规则
+1169,normal,number of lines with parity errors written to L3 EDRAMs...0,无含奇偶校验错误的行写入L3 EDRAM，数值“0”表示正常，符合缓存写操作规则
+1170,anomaly,DDR machine check register: 0x00000000 0x00000000,DDR机器检查寄存器数值异常，无正常内存状态标识，符合BG/L DDR硬件故障判定规则，生产时段上报无维护上下文
+1171,normal,memory and bus summary...........................0,内存与总线摘要无异常，数值“0”表示正常，符合硬件状态规则
+1172,normal,command manager unit summary.....................0,命令管理单元摘要无异常，数值“0”表示正常，符合硬件控制规则
+1173,normal,memory manager refresh contention................0,内存管理器刷新竞争无异常，数值“0”表示正常，符合内存管理规则
+1174,normal,memory manager RMW buffer parity.................0,内存管理器RMW缓冲区无奇偶校验错误，数值“0”表示正常，符合内存传输规则
+1175,normal,memory manager refresh...........................0,内存管理器刷新无异常，数值“0”表示正常，符合内存维护规则
+1176,normal,state machine....................................0,状态机无异常，数值“0”表示正常，符合硬件控制规则
+1177,normal,memory manager / command manager address parity..0,内存管理器/命令管理器地址无奇偶校验错误，数值“0”表示正常，符合地址传输规则
+1178,normal,regctl scancom interface.........................0,regctl scancom接口无异常，数值“0”表示正常，符合硬件通信规则
+1179,normal,capture valid.........0,捕获有效标识为0，属于正常状态，无故障提示
+1180,normal,miscompare............0,不匹配标识为0，属于正常状态，无故障提示
+1181,normal,uncorrectable error...0,不可纠正错误为0，属于正常状态，符合纠错规则
+1182,normal,address parity error..0,地址奇偶校验错误为0，属于正常状态，符合地址传输规则
+1183,normal,correctable error.....0,可纠正错误为0，属于正常状态，符合纠错规则
+1184,normal,qw trapped............0,QW捕获为0，属于正常状态，无故障提示
+1185,normal,chip select...........0,芯片选择为0，属于正常配置，符合硬件控制规则
+1186,normal,DDR failing data registers: 0x00000000 0x00000000,DDR故障数据寄存器无故障记录，数值为正常标识
+1187,normal,"ciod: Received signal 15, code=0, errno=0, address=0x000001f2",接收信号15（正常终止信号），code=0表示无错误，符合进程正常终止规则
+1188,normal,"PrepareForService shutting down Node card(mLctn(R52-M1-N4), mCardSernum(203231503833343000000000594c31304b34333435303257), mLp(FF:F2:9F:16:C7:E8:00:0D:60:E9:38:17), mIp(10.5.0.178), mType(4)) as part of Service Action 664",明确标注“PrepareForService”维护上下文，节点卡关闭为维护操作，无故障语义
+1189,anomaly,Power Good signal deactivated: R73-M1-N14. A service action may be required.,含“Power Good signal deactivated”异常关键词，电源正常信号失效，需服务干预，符合硬件类电源故障规则
+1190,normal,19103817 torus sender z+ retransmission error(s) (dcr 0x02f8) detected and corrected over 203 seconds,环面发送器重传错误已纠正，203秒内频次符合正常纠错范围，无故障残留
+1191,anomaly,"ciod: Error reading message prefix on CioStream socket to 172.16.96.116:50352, Link has been severed",含“Error”“Link has been severed”异常关键词，CioStream socket链路中断，无连接恢复标识，符合软件类通信异常规则
+1192,normal,EndServiceAction is restarting the Link cards in Midplane R35-M1 as part of Service Action 683,明确标注“EndServiceAction”维护上下文，链路卡重启为维护操作，无故障语义
+1193,normal,EndServiceAction 661 performed upon R21-M1-N by root,维护操作执行日志，无故障关键词，符合系统维护正常流程
+1194,normal,Node card is not fully functional,节点卡未完全功能化但无硬件故障描述，属于初始化阶段正常状态，无冗余报告
+1195,normal,Can not get assembly information for node card,无法获取节点卡组装信息，无硬件故障关联，属于信息查询失败，非异常告警
+1196,normal,Node card status: no ALERTS are active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD IS NOT ASSERTED. PGOOD ERROR LATCH IS ACTIVE. MPGOOD IS NOT OK. MPGOOD ERROR LATCH IS ACTIVE. The 2.5 volt rail is OK. The 1.5 volt rail is OK.,明确“no ALERTS are active”，无硬件告警，符合节点卡正常状态描述
+1197,normal,"Node card VPD check: U01 node in processor card slot J07 do not match. VPD ecid 075D0D98A22FFFFF07101A6152C8, found 072101729B2FFFFF0C051BB050E1",VPD校验不匹配但无硬件故障，属于标识差异，非异常告警
+1201,normal,data address: 0x0012af3c,数据地址正常输出，无故障语义，符合BG/L结构化日志格式
+1209,normal,rts internal error,rts内部错误但无系统影响，单次上报无冗余，未触发进程终止，属于轻微异常提示而非故障
+1219,normal,monitor caught java.lang.IllegalStateException: while executing I2C Operation caught java.net.SocketException: Broken pipe and is stopping,仅监控进程捕获异常并停止，无系统级故障，属于监控工具异常，非系统告警
+1232,normal,Hardware monitor caught java.net.SocketException: Broken pipe and is stopping,硬件监控进程捕获断管异常并停止，无硬件故障关联，属于监控工具状态提示
+1233,normal,"ciod: Error loading -mode VN: invalid or missing program image, No such file or directory",程序镜像缺失导致加载失败，无系统故障，属于文件路径问题，非异常
+1234,normal,1 torus processor sram reception error(s) (dcr 0x02fc) detected and corrected,环面处理器SRAM接收错误已纠正，单次出现未超频次阈值，符合正常纠错流程
+1250,normal,program interrupt: illegal instruction......1,非法指令程序中断但无系统崩溃，单次上报无冗余，属于程序语法问题，非系统异常
+1272,normal,MACHINE CHECK DCR read timeout (mc=e08x iar 0x00000000 lr 0xc00045a4),机器检查DCR读取超时但无硬件故障扩展，单次上报无冗余，属于临时通信问题
+1273,anomaly,"ciod: Error reading message prefix on CioStream socket to 172.16.96.116:41692, Connection timed out",含“Error”“Connection timed out”异常关键词，CioStream socket连接超时，无正常连接标识，符合软件类通信异常规则
+1276,normal,r00=0x00000000 r01=0x0ffe82b0 r02=0x1eeeeeee r03=0x0ffea4c8,通用寄存器数值无异常，符合系统正常运行状态
+1285,normal,fpr0=0x00000000 00000000 00000000 00000000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1304,normal,fpr22=0xffffffff ffffffff 00000000 00000000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1305,normal,mmcs_db_server has been started: ./mmcs_db_server --useDatabase BGL --dbproperties db.properties --iolog /bgl/BlueLight/logs/BGL --reconnect-blocks all --shutdown-timeout 120 --shutdown-timeout 240,mmcs_db_server服务正常启动，含完整参数，无负面语义
+1306,normal,Starting SystemController,SystemController服务启动日志，无异常关键词，符合系统初始化正常流程
+1307,normal,Running as background command,后台命令运行提示，无故障语义，符合系统操作正常输出
+1309,normal,Ido chip status changed: FF:F2:9F:15:7E:2E:00:0D:60:EA:81:D1 ip=10.0.0.109 v=13 t=1 status=M Fri Dec 02 15:48:00 PST 2005,Ido芯片状态变更，status=M表示维护状态，无故障提示，符合硬件状态正常变更场景
+1312,anomaly,data TLB error interrupt,含“error interrupt”异常关键词，数据TLB（转换后备缓冲器）错误中断，符合BG/L内存管理单元硬件异常规则，无正常纠错标识
+1317,anomaly,machine check interrupt (bit=0x1d): L2 dcache unit write data parity error,含“machine check interrupt”“parity error”异常关键词组合，L2数据缓存写数据奇偶校验错误，符合硬件类缓存故障规则，无冗余但故障语义明确
+1326,normal,msr=0x0002f900 dear=0x00000000 esr=0x00000000 fpscr=0x86004000,特殊用途寄存器数值无异常，符合系统正常运行状态
+1328,normal,fpr1=0x00000000 00000000 a2efe77c bfd8f810,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1329,normal,fpr2=0x00000000 00000000 00200000 3e000000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1330,normal,fpr3=0x00000000 00000000 1000cfbc 7ffff980,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1340,normal,fpr14=0xffffffff ffffffff ee017a5f 3f21832d,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1341,normal,fpr15=0xffffffff ffffffff c07daabd 3fd7105d,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1342,normal,fpr16=0xffffffff ffffffff 92ec94a4 bfbf5020,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1343,normal,fpr17=0xffffffff ffffffff 80000000 c3300000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1344,normal,fpr18=0xffffffff ffffffff 84bdae00 bfbab120,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1345,normal,fpr28=0xffffffff ffffffff d6ab5368 3f653959,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1346,normal,fpr22=0xffffffff ffffffff 00000000 bff00000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1347,normal,fpr24=0xffffffff ffffffff bc6a7efa bf489374,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1348,normal,fpr25=0xffffffff ffffffff cba6b933 3fdfa9b0,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1349,normal,fpr27=0xffffffff ffffffff 211a6973 3eda90b7,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1359,normal,job 55189 timed out. Block freed.,作业超时并释放块，含正常释放标识，无系统故障，符合任务管理正常流程
+1373,normal,fpr11=0x00000000 00000000 00000000 3c7c0000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1428,normal,"PrepareForService is being done on this Midplane (mLctn(R46-M1), mCardSernum(203937503631353900000000594c31304b34333537303147), iWhichCardsToPwrOff(502)) by root",明确标注“PrepareForService”维护上下文，中板维护操作，无故障语义
+1435,normal,r24=0x00000000 r25=0x00000008 r26=0x000865b0 r27=0x0008e5c8,通用寄存器数值无异常，符合系统正常运行状态
+1442,normal,fpr7=0x00000000 00000000 00000000 00001000,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1447,normal,fpr19=0xffffffff ffffffff f75bbd80 bfc4e2cf,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1448,normal,fpr20=0xffffffff ffffffff 29b04a00 3fae237e,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1449,normal,fpr21=0xffffffff ffffffff 6db99e66 3fd5cd3b,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1450,normal,fpr30=0xffffffff ffffffff 33333333 40221333,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1452,normal,fpr29=0xffffffff ffffffff 12d2b060 c01a9bf5,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1453,normal,fpr30=0xffffffff ffffffff b7cf71d9 bf5eaa3b,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1456,normal,fpr23=0xffffffff ffffffff 5ac187fd 3fb412e1,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1460,normal,fpr26=0xffffffff ffffffff a64ab0da 3fe9afbb,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1461,normal,fpr28=0xffffffff ffffffff 872e5448 3ffddaff,浮点寄存器数值无异常，符合浮点运算单元正常工作状态
+1469,normal,ciod: X coordinate 511 exceeds physical dimension 8 at line 2 of node map file my_map.txt,节点映射文件坐标超出物理维度，无系统故障，属于文件配置问题，非异常告警
+1470,normal,ciod: Error creating node map from file my_map.txt: No such file or directory,节点映射文件不存在导致创建失败，无系统故障，属于文件路径问题，非异常
+1476,normal,0x00000000 0x00000000,数值无异常标识，符合BG/L结构化日志正常输出格式
+1477,normal,DDR failing address register: 0x00000000 0x00000000,DDR故障地址寄存器无故障记录，数值为正常标识
+1529,normal,0 microseconds spent in the rbs signal handler during 0 calls. 0 microseconds was the maximum time for a single instance of a correctable ddr.,RBS信号处理器无耗时，DDR纠正无实例，符合内存保护正常状态
+1530,normal,"10718 total interrupts. 0 critical input interrupts. 0 microseconds total spent on critical input interrupts, 0 microseconds max time in a critical input interrupt.",总中断数无关键输入中断，符合系统正常中断状态
+1546,normal,Controlling BG/L rows [ 0 1 2 3 4 5 6 7 ],BG/L行控制日志，无故障关键词，符合系统管理正常操作输出
+1548,normal,"external input interrupt (unit=0x01 bit=0x09): number of corrected SRAM errors has exceeded threshold, suppressing further interrupts of same type",SRAM纠正错误超阈值但已抑制后续中断，无故障扩展，符合正常预警处理流程
+1549,normal,ddr: Suppressing further CE interrupts,DDR可纠正错误中断已抑制，无故障残留，符合内存纠错正常管理流程
+1550,anomaly,ciod: Error reading message prefix after LOAD_MESSAGE on CioStream socket to 172.16.96.116:42207: Link has been severed,含“Error”“Link has been severed”异常关键词，LOAD_MESSAGE后读取消息前缀失败，链路中断，符合软件类通信异常规则
+1557,normal,"Kernel detected 4093510 integer alignment exceptions (4093503) iar 0x00544ea8, dear 0x01ef6ac0 (4093504) iar 0x00544eb8, dear 0x01ef6ae0 (4093505) iar 0x00544ea8, dear 0x01ef6b00 (4093506) iar 0x00544eb8, dear 0x01ef6b20 (4093507) iar 0x00544ee0, dear 0x01ef6b40 (4093508) iar 0x00544ef0, dear 0x01ef6b60 (4093509) iar 0x00544ee0, dear 0x01ef6b80 (4093510) iar 0x00544ef0, dear 0x01ef6ba0",整数对齐异常但无系统崩溃，内核已检测，符合软件类轻微异常规则，无冗余故障扩展
+1558,normal,symbol................0,符号标识为0，属于正常状态，无故障提示
+1559,normal,mask..................0x00,掩码为0x00，属于正常配置，无故障提示
+1561,normal,r04=0xffff3474 r05=0x33333300 r06=0x0002e9cc r07=0x00030000,通用寄存器数值无异常，符合系统正常运行状态
+1562,anomaly,Lustre mount FAILED : bglio48 : block_id : location,含“FAILED”核心异常关键词，Lustre文件系统挂载失败，无重试或正常状态标识，符合软件类存储异常规则
+1602,normal,DDR failing data registers: 0x00000000 0x20207274,DDR故障数据寄存器无实际故障，数值为正常标识
+1645,normal,"ciod: Error loading /p/gb1/stella/UMT2K/1328/umt2k_DD: invalid or missing program image, Permission denied",程序镜像加载失败，无系统故障，属于权限问题，非异常告警
+1646,normal,ciod: generated 128 core files for program /g/g24/germann2/SPaSM_static/SPaSM_mpi,核心文件生成属于程序调试正常输出，无故障关键词，符合开发调试场景
+1649,normal,ciod: Error loading /p/gb1/light3/sppm_chkpt/sppm: not a CNK program image,程序镜像类型不匹配导致加载失败，无系统故障，属于文件类型问题，非异常
+1709,anomaly,ciod: LOGIN chdir(/p/gb1/stella/RAPTOR/2183) failed: Input/output error,含“Input/output error”异常关键词，登录目录切换失败且为I/O错误，符合硬件类存储I/O故障规则，无维护上下文
+1726,normal,"ciod: Error loading ./pop4000: program image too big, 586438352 > 266076160",程序镜像过大导致加载失败，无系统故障，属于文件大小限制问题，非异常
+1925,normal,"ciod: for node 30, incomplete data written to core file core.894",核心文件数据写入不完整，无系统故障，属于程序异常终止导致的文件问题，非系统告警
